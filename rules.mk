@@ -40,7 +40,7 @@ CXX := g++
 CXX_DEP = @ g++ -MM -MT
 COLOR_CXX = @ tput setaf 5 && echo '[compile C++ source] $<' && \
        tput sgr0
-COMPILE_CXX = $(CXX) -c $(CFLAGS) $(filter %.cpp, $^) -o $@
+COMPILE_CXX = $(CXX) --std=c++11 -c $(CFLAGS) $(filter %.cpp, $^) -o $@
 
 SHOW_OBJ_UNDEF_SYMBOLS = nm --undefined-only $@
 CCDH = gcc -dH
